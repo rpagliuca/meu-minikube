@@ -26,5 +26,5 @@ kubectl wait --for=condition=ready pod -n argocd -l app.kubernetes.io/name=argoc
 
 # Wait until secret is ready
 # while ! kubectl get secret -n argocd argocd-initial-admin-secret; do sleep 1; done;
-echo ArgoCD app URL: http://argocd.my-minikube
+echo ArgoCD app URL: http://argocd.my-minikube.com
 echo ArgoCD password:; ( kubectl get secret -n argocd argocd-initial-admin-secret -o json | jq .data.password -r | base64 -d )
