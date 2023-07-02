@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: golang-basic-api
+  namespace: apps
+  labels:
+    app: golang-basic-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: golang-basic-api
+  template:
+    metadata:
+      labels:
+        app: golang-basic-api
+    spec:
+      containers:
+      - name: app
+        image: rpagliuca/golang-basic-api
+        ports:
+        - containerPort: 8080

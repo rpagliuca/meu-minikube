@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+ name: golang-basic-api
+spec:
+ rules:
+   - host: golang-basic-api.my-minikube.com
+     http:
+       paths:
+         - path: /
+           pathType: Prefix
+           backend:
+             service:
+               name: golang-basic-api
+               port:
+                 number: 8080
