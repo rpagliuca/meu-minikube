@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: serverinfo
+  namespace: apps
+  labels:
+    app: serverinfo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: serverinfo
+  template:
+    metadata:
+      labels:
+        app: serverinfo
+    spec:
+      containers:
+      - name: nginx
+        image: nginxdemos/hello:plain-text
+        ports:
+        - containerPort: 80
