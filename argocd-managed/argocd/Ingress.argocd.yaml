@@ -1,18 +1,25 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
- name: argocd
- annotations:
-   nginx.ingress.kubernetes.io/rewrite-target: /$1
+  name: argocd
+  namespace: argocd
+  annotations:
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
 spec:
- rules:
-   - host: argocd.my-minikube
-     http:
-       paths:
-         - path: /
-           pathType: Prefix
-           backend:
-             service:
-               name: argocd-server
-               port:
-                 number: 80
+  ingressClassName: "nginx"
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: argocd-server
+            port:
+              name: http
+    host: argocd.my-minikube
+  tls:
+  - hosts:
+    - argocd.my-minikube
+    secretName: argocd-secret # do not change, this is provided by Argo CD
