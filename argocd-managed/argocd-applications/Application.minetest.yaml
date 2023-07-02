@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: minetest
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/rpagliuca/my-minikube.git
+    targetRevision: HEAD
+    path: argocd-managed/minetest
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: apps
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
