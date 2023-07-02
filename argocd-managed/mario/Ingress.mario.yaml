@@ -4,7 +4,7 @@ metadata:
  name: mario
 spec:
  rules:
-   - host: mario.my-minikube
+   - host: mario.my-minikube.com
      http:
        paths:
          - path: /

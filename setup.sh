@@ -14,7 +14,7 @@ done;
 
 # Setup minikube DNS
 sudo sh -c "echo resolv-file=/etc/resolv.dnsmasq.conf > /etc/dnsmasq.d/my-minikube"
-sudo sh -c "echo address=/my-minikube/$(minikube ip) >> /etc/dnsmasq.d/my-minikube"
+sudo sh -c "echo address=/my-minikube.com/$(minikube ip) >> /etc/dnsmasq.d/my-minikube"
 sudo sh -c "echo nameserver 8.8.8.8 > /etc/resolv.dnsmasq.conf"
 sudo sh -c "echo nameserver 127.0.0.1 > /etc/resolv.conf"
 cat /etc/dnsmasq.d/my-minikube
@@ -27,4 +27,4 @@ kubectl wait --for=condition=ready pod -n argocd -l app.kubernetes.io/name=argoc
 # Wait until secret is ready
 # while ! kubectl get secret -n argocd argocd-initial-admin-secret; do sleep 1; done;
 echo ArgoCD app URL: http://argocd.my-minikube
-echo ArgoCD password:; ( kubectl get secret -n argocd argocd-initial-admin-secret -o json | jq .data.password -r | base64 -d ); echo;
+echo ArgoCD password:; ( kubectl get secret -n argocd argocd-initial-admin-secret -o json | jq .data.password -r | base64 -d )
