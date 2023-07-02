@@ -1,0 +1,12 @@
+resources:
+- Deployment.minetest.yaml
+- PersistentVolumeClaim.minetest.yaml
+- PersistentVolume.minetest.yaml
+- Service.minetest.yaml
+
+namespace: apps
+
+configMapGenerator:
+- name: minetest
+  files:
+  - minetest.conf
