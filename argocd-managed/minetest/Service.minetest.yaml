@@ -5,7 +5,7 @@ metadata:
   labels:
     app: minetest
   name: minetest
-  namespace: default
+  namespace: apps
 spec:
   ports:
     - name: minetest
