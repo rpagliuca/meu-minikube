@@ -23,14 +23,14 @@ spec:
               protocol: UDP
           volumeMounts:
             - mountPath: /var/lib/minetest
-              name: minetest-data
+              name: minetest
             - mountPath: /etc/minetest
               name: config
       restartPolicy: Always
       volumes:
-        - name: minetest-data
+        - name: minetest
           persistentVolumeClaim:
-            claimName: minetest-data
+            claimName: minetest
         - configMap:
             defaultMode: 420
             name: minetest
