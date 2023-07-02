@@ -4,6 +4,7 @@ metadata:
  name: docker-private-registry
 annotations:
  nginx.ingress.kubernetes.io/proxy-body-size: 1g
+ kubernetes.io/ingress.class: "nginx"
 spec:
  rules:
    - host: docker-private-registry.my-minikube.com
