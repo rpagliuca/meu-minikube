@@ -2,6 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
  name: docker-private-registry
+annotations:
+ nginx.ingress.kubernetes.io/proxy-body-size: 1g
 spec:
  rules:
    - host: docker-private-registry.my-minikube.com
