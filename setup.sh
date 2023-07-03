@@ -17,7 +17,10 @@ echo Waiting for ArgoCD server to be ready...
 kubectl wait --for=condition=ready pod -n argocd -l app.kubernetes.io/name=argocd-server
 
 # Wait until secret is ready
-# while ! kubectl get secret -n argocd argocd-initial-admin-secret; do sleep 1; done;
 echo "ArgoCD app URL (requer configuração prévia do dnsmasq): http://argocd.my-minikube.com"
 echo ArgoCD password:; ( kubectl get secret -n argocd argocd-initial-admin-secret -o json | jq .data.password -r | base64 -d )
-echo "Se não tiver o dnsmasq configurado, primeiramente rode kubectl port-forward -n argocd svc/argocd-server 8080:80, e depois acesse via localhost:8080"
+echo
+echo
+echo "Instruções extras caso você não tenha o dnsmasq configurado:"
+echo "1. Rode o comando :kubectl port-forward -n argocd svc/argocd-server 8080:80"
+echo "2. Acesse via browser: localhost:8080"
