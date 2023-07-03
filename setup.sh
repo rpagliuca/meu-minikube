@@ -4,7 +4,7 @@
 minikube delete
 minikube start
 minikube addons enable ingress
-minikube addons enable ingress-dns
+# minikube addons enable ingress-dns
 
 # Apply manual resources
 for i in {1..3}; do
