@@ -13,8 +13,26 @@ Repositório de infra-as-code para aprendizado de Kubernetes, que consiste das s
 * Hashicorp Vault: gerenciador de senhas para aplicações cloud
 
 ## Como usar
+
 1. Instalar o minikube (ver https://minikube.sigs.k8s.io/docs/start/)
 2. Clonar este repositório usando git: `git clone https://github.com/rpagliuca/my-minikube.git`
 3. Entrar na pasta do repositório clonado e rodar: `bash setup.sh`
+4. Acessar a aplicação ArgoCD (ver seção abaixo sobre `port-forward` ou sobre `dnsmasq`)
 
-Opcional: instalar `dnsmasq` usando `sudo apt install dnsmasq` e configurá-lo usando o script fornecido por este repositório: `bash setup-dnsmasq.sh`
+## Opcional: abrir aplicação ArgoCD via `port-forward`
+1. Rodar `kubectl port-forward -n argocd svc/argocd-server 80:8080`
+2. Acessar via browser `http://localhost:8080`
+3. O mesmo procedimento pode ser feito para rodas as diferentes aplicações (fazendo port-forward do nome do serviço e portas apropriados)
+
+## Opcional: instalar `dnsmasq` para acessar todas as aplicações via endereços próprios
+
+1. Em distribuições baseadas em Debian, rode: `sudo apt install dnsmasq`
+2. Rode o script `bash setup-dnsmasq.sh` fornecido junto com este repositório
+
+O script `setup-dnsmasq.sh` configura o `dnsmasq` para direcionar todas as URLs com `my-minikube.com` para o IP do minikube. Assim, fica possível acessar os seguintes endereços diretamente pelo navegador:
+
+* http://argocd.my-minikube.com
+* http://prometheus.my-minikube.com
+* http://grafana.my-minikube.com
+* http://mario.my-minikube.com
+* http://serverinfo.my-minikube.com
