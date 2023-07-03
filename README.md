@@ -14,7 +14,7 @@ Repositório de infra-as-code para aprendizado de Kubernetes, que consiste das s
 
 ## Como usar
 1. Instalar o minikube (ver https://minikube.sigs.k8s.io/docs/start/)
-2. Clonar este repositório usando git: `git clone github.com/rpagliuca/my-minikube`
+2. Clonar este repositório usando git: `git clone https://github.com/rpagliuca/my-minikube.git`
 3. Entrar na pasta do repositório clonado e rodar: `bash setup.sh`
 
 Opcional: instalar `dnsmasq` usando `sudo apt install dnsmasq` e configurá-lo usando o script fornecido por este repositório: `bash setup-dnsmasq.sh`
