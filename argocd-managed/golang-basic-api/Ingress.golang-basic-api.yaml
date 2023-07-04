@@ -4,7 +4,7 @@ metadata:
  name: golang-basic-api
 spec:
  rules:
-   - host: golang-basic-api.my-minikube.com
+   - host: golang-basic-api.meu-minikube.com
      http:
        paths:
          - path: /

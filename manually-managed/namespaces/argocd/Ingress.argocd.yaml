@@ -18,8 +18,8 @@ spec:
             name: argocd-server
             port:
               name: http
-    host: argocd.my-minikube.com
+    host: argocd.meu-minikube.com
   tls:
   - hosts:
-    - argocd.my-minikube
+    - argocd.meu-minikube
     secretName: argocd-secret # do not change, this is provided by Argo CD

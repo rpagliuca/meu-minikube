@@ -1,4 +1,4 @@
-# rpagliuca/my-minikube
+# rpagliuca/meu-minikube
 
 ## Sobre
 Repositório de infra-as-code para aprendizado de Kubernetes, que consiste das seguintes aplicações:
@@ -15,7 +15,7 @@ Repositório de infra-as-code para aprendizado de Kubernetes, que consiste das s
 ## Como usar
 
 1. Instalar o minikube (ver https://minikube.sigs.k8s.io/docs/start/)
-2. Clonar este repositório usando git: `git clone https://github.com/rpagliuca/my-minikube.git`
+2. Clonar este repositório usando git: `git clone https://github.com/rpagliuca/meu-minikube.git`
 3. Entrar na pasta do repositório clonado e rodar: `bash setup.sh`
 4. Acessar a aplicação ArgoCD (ver seção abaixo sobre `port-forward` ou sobre `dnsmasq`)
 
@@ -29,10 +29,10 @@ Repositório de infra-as-code para aprendizado de Kubernetes, que consiste das s
 1. Em distribuições baseadas em Debian, rode: `sudo apt install dnsmasq`
 2. Rode o script `bash setup-dnsmasq.sh` fornecido junto com este repositório
 
-O script `setup-dnsmasq.sh` configura o `dnsmasq` para direcionar todas as URLs com `my-minikube.com` para o IP do minikube. Assim, fica possível acessar os seguintes endereços diretamente pelo navegador:
+O script `setup-dnsmasq.sh` configura o `dnsmasq` para direcionar todas as URLs com `meu-minikube.com` para o IP do minikube. Assim, fica possível acessar os seguintes endereços diretamente pelo navegador:
 
-* http://argocd.my-minikube.com
-* http://prometheus.my-minikube.com
-* http://grafana.my-minikube.com
-* http://mario.my-minikube.com
-* http://serverinfo.my-minikube.com
+* http://argocd.meu-minikube.com
+* http://prometheus.meu-minikube.com
+* http://grafana.meu-minikube.com
+* http://mario.meu-minikube.com
+* http://serverinfo.meu-minikube.com

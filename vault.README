@@ -1,6 +1,6 @@
 # Caso tenha configurado `dnsmasq`
 
-export VAULT_ADDR=http://vault.my-minikube.com # 
+export VAULT_ADDR=http://vault.meu-minikube.com
 
 # Caso não tenha configurado `dnsmasq`, é necessário `port-forward`
 

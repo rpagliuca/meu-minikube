@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/rpagliuca/my-minikube.git
+    repoURL: https://github.com/rpagliuca/meu-minikube.git
     targetRevision: HEAD
     path: argocd-managed/serverinfo
   destination:

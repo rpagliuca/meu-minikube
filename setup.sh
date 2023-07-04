@@ -17,7 +17,7 @@ echo Waiting for ArgoCD server to be ready...
 kubectl wait --for=condition=ready pod -n argocd -l app.kubernetes.io/name=argocd-server
 
 # Wait until secret is ready
-echo "ArgoCD app URL (requer configuração prévia do dnsmasq): http://argocd.my-minikube.com"
+echo "ArgoCD app URL (requer configuração prévia do dnsmasq): http://argocd.meu-minikube.com"
 echo ArgoCD password:; ( kubectl get secret -n argocd argocd-initial-admin-secret -o json | jq .data.password -r | base64 -d )
 echo
 echo
