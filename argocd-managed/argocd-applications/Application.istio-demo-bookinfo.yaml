@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: istio-demo-bookinfo
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/rpagliuca/meu-minikube.git
+    targetRevision: HEAD
+    path: argocd-managed/istio-demo-bookinfo
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: istio-demo-bookinfo
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
