@@ -12,11 +12,11 @@ spec:
     helm:
       fileParameters:
       - name: identityTrustAnchorsPEM
-        path: argocd-managed/linkerd-control-plane/ca.crt
+        path: ca.crt
       - name: identity.issuer.tls.crtPEM
-        path: argocd-managed/linkerd-control-plane/issuer.crt
+        path: issuer.crt
       - name: identity.issuer.tls.keyPEM
-        path: argocd-managed/linkerd-control-plane/issuer.key
+        path: issuer.key
   destination:
     server: https://kubernetes.default.svc
     namespace: linkerd
