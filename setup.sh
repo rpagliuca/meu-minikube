@@ -2,7 +2,7 @@
 
 # Restart minikube
 minikube delete
-minikube start
+minikube start --memory=8G
 minikube addons enable ingress
 # minikube addons enable ingress-dns
 
