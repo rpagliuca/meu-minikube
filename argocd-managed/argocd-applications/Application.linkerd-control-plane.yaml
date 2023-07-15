@@ -6,9 +6,17 @@ metadata:
 spec:
   project: default
   source:
-    chart: linkerd-control-plane
-    repoURL: https://helm.linkerd.io/stable
-    targetRevision: 1.12.5
+    repoURL: https://github.com/rpagliuca/meu-minikube.git
+    targetRevision: HEAD
+    path: argocd-managed/linkerd-control-plane
+    helm:
+      fileParameters:
+      - name: identityTrustAnchorsPEM
+        path: ca.crt
+      - name: identity.issuer.tls.crtPEM
+        path: issuer.crt
+      - name: identity.issuer.tls.keyPEM
+        path: issuer.key
   destination:
     server: https://kubernetes.default.svc
     namespace: linkerd
