@@ -11,7 +11,7 @@ spec:
     targetRevision: 1.18.1
   destination:
     server: https://kubernetes.default.svc
-    namespace: istio-base
+    namespace: istio-system
   syncPolicy:
     automated:
       prune: true
