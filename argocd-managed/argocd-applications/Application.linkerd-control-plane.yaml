@@ -11,7 +11,7 @@ spec:
     path: argocd-managed/linkerd-control-plane
     helm:
       parameters:
-      - name: proxy.proxyInit.runAsRoot
+      - name: linkerd-control-plane.proxyInit.runAsRoot
         value: "true"
       fileParameters:
       - name: linkerd-control-plane.identityTrustAnchorsPEM
