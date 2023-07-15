@@ -4,3 +4,4 @@ namespace: istio-demo-bookinfo
 resources:
 - All.istio-demo-bookinfo.yaml
 - Namespace.istio-demo-bookinfo.yaml
+- Gateway.istio-demo-bookinfo.yaml
