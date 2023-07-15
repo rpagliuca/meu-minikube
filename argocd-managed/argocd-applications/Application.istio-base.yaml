@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: istio-base
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: base
+    repoURL: https://istio-release.storage.googleapis.com/charts
+    targetRevision: 1.18.1
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: istio-base
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
