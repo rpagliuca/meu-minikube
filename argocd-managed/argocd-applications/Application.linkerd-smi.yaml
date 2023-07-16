@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: linkerd-smi
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/rpagliuca/meu-minikube.git
+    targetRevision: HEAD
+    path: argocd-managed/linkerd-smi
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: apps
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
