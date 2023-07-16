@@ -4,3 +4,4 @@ namespace: linkerd-flagger-demo
 resources:
 - All.yaml
 - Namespace.yaml
+- Canary.yaml
