@@ -19,8 +19,7 @@ spec:
     syncOptions:
     - RespectIgnoreDifferences=true
   ignoreDifferences:
-  - group: core
+  - group: "*"
     kind: Service
-    name: podinfo
     jqPathExpressions:
     - .spec.selector.app
