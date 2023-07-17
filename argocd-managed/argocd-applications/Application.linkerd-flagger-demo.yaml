@@ -12,4 +12,13 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: apps
-  syncPolicy: {}
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  ignoreDifferences:
+  - group: core
+    kind: Service
+    name: podinfo
+    jqPathExpressions:
+    - .spec.selector.app
